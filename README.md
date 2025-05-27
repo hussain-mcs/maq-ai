@@ -40,3 +40,37 @@ docker-compose -f docker-compose.local.yml exec php php artisan migrate
 docker-compose -f docker-compose.local.yml exec php composer install
 docker-compose -f docker-compose.local.yml exec mariadb mysql -u root -p
 
+=============================
+
+## Production
+
+- Down existing
+    ``
+- New Run
+
+- Go to App Container
+    ` sudo docker-compose exec php bash`
+
+- Update Env Details App Url
+
+- Update Env Details DB
+
+```
+DB_CONNECTION=mysql
+DB_HOST=mariadb
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laravel
+DB_PASSWORD=secret
+```
+
+
+- Run Migrate
+`php artisan migrate`
+
+
+
+- Visit Url
+
+
+- Automate .env update + DB Details + migrate
