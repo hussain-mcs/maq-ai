@@ -23,6 +23,7 @@ chown ubuntu:ubuntu /var/www/laravel-app
 
 # Install AWS CLI (optional, for deployment scripts)
 apt-get install -y awscli
+ap-get install -y vim
 
 # Create swap file (recommended for small instances)
 fallocate -l 1G /swapfile

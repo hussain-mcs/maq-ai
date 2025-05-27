@@ -38,6 +38,8 @@ COPY .env.example /var/www/html/.env
 
 # Generate application key
 RUN php artisan key:generate --force
+RUN php artisan migrate
+# RUN php artisan db:seed
 
 EXPOSE 9000
 CMD ["php-fpm"]
