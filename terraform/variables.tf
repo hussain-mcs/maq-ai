@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region"
   type        = string
-  default     = "us-east-1"
+  default     = "ap-south-1"
 }
 
 variable "project_name" {
@@ -19,5 +19,5 @@ variable "environment" {
 variable "bundle_id" {
   description = "Lightsail bundle ID"
   type        = string
-  default     = "micro_2_0" # 1 GB RAM, 1 vCPU, 40 GB SSD
+  default     = "micro_3_1" # 1 GB RAM, 2 vCPU, 40 GB SSD $7
 }

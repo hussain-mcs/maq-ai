@@ -17,3 +17,26 @@
 
 - Visit Application
     `http://localhost:8085/` `http://localhost:8085/hello`  `http://localhost:8086/`
+
+## Local Useful Commands
+
+# Stop containers
+docker-compose -f docker-compose.local.yml down
+
+# Restart containers
+docker-compose -f docker-compose.local.yml restart
+
+# Rebuild containers
+docker-compose -f docker-compose.local.yml down
+docker-compose -f docker-compose.local.yml up --build -d
+
+# View container logs
+docker-compose -f docker-compose.local.yml logs nginx
+docker-compose -f docker-compose.local.yml logs php
+docker-compose -f docker-compose.local.yml logs mariadb
+
+# Execute commands in containers
+docker-compose -f docker-compose.local.yml exec php php artisan migrate
+docker-compose -f docker-compose.local.yml exec php composer install
+docker-compose -f docker-compose.local.yml exec mariadb mysql -u root -p
+

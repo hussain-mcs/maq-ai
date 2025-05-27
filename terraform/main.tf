@@ -20,7 +20,7 @@ resource "aws_lightsail_key_pair" "laravel_key" {
 resource "aws_lightsail_instance" "laravel_server" {
   name              = "${var.project_name}-server"
   availability_zone = "${var.aws_region}a"
-  blueprint_id      = "ubuntu_20_04"
+  blueprint_id      = "ubuntu_24_04"
   bundle_id         = var.bundle_id
   key_pair_name     = aws_lightsail_key_pair.laravel_key.name
   user_data         = file("${path.module}/user-data.sh")
