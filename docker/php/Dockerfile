@@ -34,7 +34,7 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/bootstrap/cache
 
 # Copy environment file
-COPY .env.example .env
+COPY .env.example /var/www/html/.env
 
 # Generate application key
 RUN php artisan key:generate --force
