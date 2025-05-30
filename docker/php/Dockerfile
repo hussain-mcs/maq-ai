@@ -33,16 +33,5 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/storage \
     && chmod -R 755 /var/www/html/bootstrap/cache
 
-# Copy environment file
-COPY .env.example /var/www/html/.env
-
-# Generate application key
-RUN php artisan key:generate --force
-
-# Update .env for DB connection
-# RUN sed -i "s/DB_HOST=
-#RUN php artisan migrate
-# RUN php artisan db:seed
-
 EXPOSE 9000
 CMD ["php-fpm"]

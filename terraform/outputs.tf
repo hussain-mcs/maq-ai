@@ -22,3 +22,8 @@ output "phpmyadmin_url" {
   description = "phpMyAdmin URL"
   value       = "http://${aws_lightsail_static_ip.laravel_static_ip.ip_address}:8080"
 }
+
+output "private_key" {
+  value     = aws_lightsail_key_pair.laravel_key.private_key
+  sensitive = true
+}

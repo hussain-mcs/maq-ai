@@ -19,11 +19,19 @@ apt-get install -y git
 
 # Create application directory
 mkdir -p /var/www/laravel-app
+git clone https://github.com/hussain-mcs/maq-ai.git /var/www/laravel-app
+
+# Set permissions and ownership
+chmod -R 755 /var/www/laravel-app
 chown ubuntu:ubuntu /var/www/laravel-app
+
+# Copy Docker Compose file
+cd /var/www/laravel-app/docker && docker-compose -f docker-compose.yml up --build -d
+
 
 # Install AWS CLI (optional, for deployment scripts)
 apt-get install -y awscli
-ap-get install -y vim
+apt-get install -y vim
 
 # Create swap file (recommended for small instances)
 fallocate -l 1G /swapfile
