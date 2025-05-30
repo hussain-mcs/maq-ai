@@ -28,6 +28,8 @@ services:
       - DB_PASSWORD=secret
       - DB_CONNECTION=mysql
       - DB_PORT=3306
+      - APP_NAME="My Cool Laravel App"
+      - APP_URL="http://3.6.245.93"
     networks:
       - laravel-network
     entrypoint: ["/entrypoint.sh", "php-fpm"]
@@ -61,7 +63,9 @@ services:
 
 volumes:
   mariadb_data:
+    name: mariadb_data #If this is not specified, Docker will create a volume with a random name. Folder Name append
   laravel_app:
+    name: laravel_app
 
 networks:
   laravel-network:

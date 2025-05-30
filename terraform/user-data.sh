@@ -1,5 +1,5 @@
 #!/bin/bash
-
+START_TIME=$(date +%s)
 # Update system
 apt-get update -y
 apt-get upgrade -y
@@ -41,3 +41,14 @@ swapon /swapfile
 echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
 
 echo "Server setup completed!" > /home/ubuntu/setup-complete.txt
+
+END_TIME=$(date +%s)
+SETUP_TIME=$((END_TIME - START_TIME))
+
+echo "Setup started at: $(date -d @$START_TIME)"
+echo "Setup ended at:   $(date -d @$END_TIME)"
+echo "Total setup time: ${SETUP_TIME} seconds"
+
+echo "Setup started at: $(date -d @$START_TIME)" >> /home/ubuntu/setup-complete.txt
+echo "Setup ended at:   $(date -d @$END_TIME)" >> /home/ubuntu/setup-complete.txt
+echo "Total setup time: ${SETUP_TIME} seconds" >> /home/ubuntu/setup-complete.txt

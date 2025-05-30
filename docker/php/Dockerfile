@@ -24,12 +24,10 @@ WORKDIR /var/www/html
 
 # Copy Laravel application
 COPY . /var/www/html/
-
-# Install dependencies
-RUN composer install --no-dev --optimize-autoloader
-
+ 
 # Set permissions
-RUN chown -R www-data:www-data /var/www/html \
+RUN composer install --no-dev --optimize-autoloader \
+    chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/storage \
     && chmod -R 755 /var/www/html/bootstrap/cache
 

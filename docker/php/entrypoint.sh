@@ -3,16 +3,7 @@
 set -e
 echo "Starting entrypoint..."
 
-if [ ! -f /var/www/html/.env ]; then
-    cp /var/www/html/.env.example /var/www/html/.env
-fi
-
-if [ ! -f /var/www/laravel-app/laravel-app/.env ]; then
-    cp /var/www/laravel-app/laravel-app/.env.example /var/www/laravel-app/laravel-app/.env
-fi
-
-echo "Running composer install"
-composer install
+cp .env.example .env
 
 echo "Generating app key"
 php artisan key:generate --force

@@ -53,6 +53,9 @@ docker-compose -f docker-compose.local.yml exec mariadb mysql -u root -p
 
 - New Run
 
+### Debug Check Logs
+
+`docker-compose -f docker-compose.yml logs php`
 
 - Update Env Details App Url
 

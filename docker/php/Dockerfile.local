@@ -23,7 +23,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 # Create www-data user with proper permissions
-RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data \
+    composer install
 
 EXPOSE 9000
 CMD ["php-fpm"]
