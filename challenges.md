@@ -1,5 +1,6 @@
 - A: Docker Absolute Path vs simple Path
 - B: Volume Name Append Folder Directlory
+- C: Site can not be Reached, Bad Gateway
 
 
 ### A:
@@ -20,3 +21,7 @@ volumes:
     name: mariadb_data #If this is not specified, Docker will create a volume with a random name. Folder Name append
   laravel_app:
     name: laravel_app
+
+### C:
+  Wait for all execution to be finished, 
+  confirm if PMA is ready, verify /home/ubuntu/setup-complete.txt file exists

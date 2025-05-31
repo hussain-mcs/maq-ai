@@ -28,8 +28,6 @@ services:
       - DB_PASSWORD=secret
       - DB_CONNECTION=mysql
       - DB_PORT=3306
-      - APP_NAME="My Cool Laravel App"
-      - APP_URL="http://3.6.245.93"
     networks:
       - laravel-network
     entrypoint: ["/entrypoint.sh", "php-fpm"]

@@ -3,6 +3,8 @@
 set -e
 echo "Starting entrypoint..."
 
+composer install --no-dev --optimize-autoloader
+
 cp .env.example .env
 
 echo "Generating app key"

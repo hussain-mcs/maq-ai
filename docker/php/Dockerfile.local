@@ -22,6 +22,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
+# RUN composer install
 # Create www-data user with proper permissions
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data \
     composer install
